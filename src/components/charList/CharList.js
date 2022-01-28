@@ -16,6 +16,10 @@ const CharList = (props) => {
 
     useEffect(() => {
         onRequest(offset, true);
+
+        return () => {
+            console.log("mounted")
+        }
     }, []);
 
     const onRequest = (offset, initial) => {

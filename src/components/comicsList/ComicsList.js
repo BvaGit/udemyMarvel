@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Spinner from '../spinner/Spinner';
 import './comicsList.scss';
-import uw from '../../resources/img/UW.png';
-import xMen from '../../resources/img/x-men.png';
 
 const ComicsList = () => {
 
@@ -36,11 +35,11 @@ const ComicsList = () => {
                     tabIndex={0}
                     key={i}
                 >
-                    <a href="#">
+                    <Link to={`/comics/${comic.id}`}>
                         <img src={comic.thumbnail} alt="ultimate war" className="comics__item-img"/>
                         <div className="comics__item-name">{comic.title}</div>
                         <div className="comics__item-price">{comic.price}</div>
-                    </a>
+                    </Link>
                 </li>
             )
         })
